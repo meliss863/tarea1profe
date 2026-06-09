@@ -5,10 +5,9 @@
 package proyectointerno;
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 /**
  *
- * @author Riven & Meliss863
+ * @author Riven-702 & Meliss863
  */
 public class ProyectoInterno {
 
@@ -21,7 +20,7 @@ public class ProyectoInterno {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400, 350);
         frame.setLayout(new GridLayout(7, 2, 5, 5));
-        frame.setLayout(new Gridlayout(6,1,4,4));
+
 
         JTextField[] campos = new JTextField[5];
         String[] etiquetas = {"Nombre:", "Apellido:", "Email:", "Teléfono:", "Dirección:"};
@@ -30,7 +29,7 @@ public class ProyectoInterno {
             frame.add(new JLabel(etiquetas[i]));
             campos[i] = new JTextField();
             frame.add(campos[i]);
-        }}
+        }
 
         JTextArea resumen = new JTextArea(3, 30);
         resumen.setEditable(false);
