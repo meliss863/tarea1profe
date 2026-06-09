@@ -2,27 +2,30 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package proyectointerno;
+package correccion;
 import javax.swing.*;
 import java.awt.*;
+
+
 /**
  *
- * @author Riven-702 & Meliss863
+ * @author Riven & Meliss863
  */
-public class ProyectoInterno {
+public class CorreccionBugs {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
-        JFrame frame = new JFrame("Regiistro de Datos");
+
+        JFrame frame = new JFrame("Registro de Datos");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400, 350);
-        frame.setLayout(new GridLayout(7, 2, 5, 5));
+        // Correccion: Mantén solo un setLayout, el GridLayout es mejor para formularios
+        frame.setLayout(new java.awt.GridLayout(6, 2, 5, 5));
 
-
-        JTextField[] campos = new JTextField[5];
+        // Correcion: Definimos el array final para que el ActionListener pueda usarlo
+        final JTextField[] campos = new JTextField[5];
         String[] etiquetas = {"Nombre:", "Apellido:", "Email:", "Teléfono:", "Dirección:"};
 
         for (int i = 0; i < etiquetas.length; i++) {
@@ -36,10 +39,11 @@ public class ProyectoInterno {
 
         JButton btn = new JButton("Mostrar el resumen");
         btn.addActionListener(e -> {
+            // Correcion: Ahora campos es accesible aquí
             resumen.setText(
-                "Nombre: " + campos[0].getText() + " " + campos[1].getText() + "\n" +
-                "Email: "  + campos[2].getText() + "\n" +
-                "Tel: "    + campos[3].getText() + " | Dirección: " + campos[4].getText()
+                    "Nombre: " + campos[0].getText() + " " + campos[1].getText() + "\n"
+                    + "Email: " + campos[2].getText() + "\n"
+                    + "Tel: " + campos[3].getText() + " | Dirección: " + campos[4].getText()
             );
         });
 
@@ -48,6 +52,3 @@ public class ProyectoInterno {
         frame.setVisible(true);
     }
 }
-    
-    
-
