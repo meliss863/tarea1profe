@@ -5,10 +5,9 @@
 package proyectointerno;
 import javax.swing.*;
 import java.awt.*;
-
 /**
  *
- * @author alfom
+ * @author Riven-702 & Meliss863
  */
 public class ProyectoInterno {
 
@@ -16,10 +15,12 @@ public class ProyectoInterno {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        JFrame frame = new JFrame("Registro de Datos");
+        
+        JFrame frame = new JFrame("Regiistro de Datos");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400, 350);
         frame.setLayout(new GridLayout(7, 2, 5, 5));
+
 
         JTextField[] campos = new JTextField[5];
         String[] etiquetas = {"Nombre:", "Apellido:", "Email:", "Teléfono:", "Dirección:"};
@@ -33,12 +34,12 @@ public class ProyectoInterno {
         JTextArea resumen = new JTextArea(3, 30);
         resumen.setEditable(false);
 
-        JButton btn = new JButton("Mostrar resumen");
+        JButton btn = new JButton("Mostrar el resumen");
         btn.addActionListener(e -> {
             resumen.setText(
                 "Nombre: " + campos[0].getText() + " " + campos[1].getText() + "\n" +
                 "Email: "  + campos[2].getText() + "\n" +
-                "Tel: "    + campos[3].getText() + " | Dir: " + campos[4].getText()
+                "Tel: "    + campos[3].getText() + " | Dirección: " + campos[4].getText()
             );
         });
 
